@@ -1,0 +1,19 @@
+name: Trigger Jenkins Build
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  trigger-jenkins-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Trigger Jenkins Build
+        run: |
+          curl -X POST 'https://dev-build-aws.coreshed.com/generic-webhook-trigger/invoke?token=1692327021535' \
+          -H 'Content-Length: 0'
