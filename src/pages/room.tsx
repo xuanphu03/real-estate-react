@@ -8,7 +8,7 @@ export default function Room() {
   useEffect(() => {
     const fetchRoom = async () => {
       const response = await fetch(
-        `https://64106f42be7258e14529c12f.mockapi.io/rooms/${id}`
+        `https://64bf5f8f5ee688b6250d547a.mockapi.io/fakeAPI${id}`
       )
       const room = await response.json()
       setRoom(room)
